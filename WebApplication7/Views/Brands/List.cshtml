@@ -1,0 +1,25 @@
+﻿
+@model WebApplication7.Models.BrandsListViewModel
+@{
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+</head>
+<body>
+    <div class="">
+        <div class="container">
+                @foreach (var item in Model.brands)
+                {
+                    <div class="row mt-2 mt-2 bg-dark text-white">
+                        <h2>@item.Name</h2>
+                    </div>
+                }
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{118E128D-39D3-4882-902F-8CD2C2E5EDD0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication7</RootNamespace>
+    <AssemblyName>WebApplication7</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44385</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.5</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.0\lib\net451\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.0\lib\net451\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.0\lib\net451\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.0\lib\net451\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\FontAwesomeBundleConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BrandsController.cs" />
+    <Compile Include="Controllers\CardItemsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SunglassesController.cs" />
+    <Compile Include="Controllers\WishListItemsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911281139135_FirstMigration.cs" />
+    <Compile Include="Migrations\201911281139135_FirstMigration.Designer.cs">
+      <DependentUpon>201911281139135_FirstMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911281155243_ModelsCreated.cs" />
+    <Compile Include="Migrations\201911281155243_ModelsCreated.Designer.cs">
+      <DependentUpon>201911281155243_ModelsCreated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911282156333_Update.cs" />
+    <Compile Include="Migrations\201911282156333_Update.Designer.cs">
+      <DependentUpon>201911282156333_Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911302123513_CardItemCreated.cs" />
+    <Compile Include="Migrations\201911302123513_CardItemCreated.Designer.cs">
+      <DependentUpon>201911302123513_CardItemCreated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911302231262_ShoppingCardCreated.cs" />
+    <Compile Include="Migrations\201911302231262_ShoppingCardCreated.Designer.cs">
+      <DependentUpon>201911302231262_ShoppingCardCreated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912011603085_NotNullId.cs" />
+    <Compile Include="Migrations\201912011603085_NotNullId.Designer.cs">
+      <DependentUpon>201912011603085_NotNullId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912011749227_UpdatedCardItem.cs" />
+    <Compile Include="Migrations\201912011749227_UpdatedCardItem.Designer.cs">
+      <DependentUpon>201912011749227_UpdatedCardItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912011754167_UpdatedCardItem2.cs" />
+    <Compile Include="Migrations\201912011754167_UpdatedCardItem2.Designer.cs">
+      <DependentUpon>201912011754167_UpdatedCardItem2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912022045256_CardItemKey.cs" />
+    <Compile Include="Migrations\201912022045256_CardItemKey.Designer.cs">
+      <DependentUpon>201912022045256_CardItemKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912022232367_Changing.cs" />
+    <Compile Include="Migrations\201912022232367_Changing.Designer.cs">
+      <DependentUpon>201912022232367_Changing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912022317396_Changing2.cs" />
+    <Compile Include="Migrations\201912022317396_Changing2.Designer.cs">
+      <DependentUpon>201912022317396_Changing2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912022325585_Changing3.cs" />
+    <Compile Include="Migrations\201912022325585_Changing3.Designer.cs">
+      <DependentUpon>201912022325585_Changing3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912022343360_Changing4.cs" />
+    <Compile Include="Migrations\201912022343360_Changing4.Designer.cs">
+      <DependentUpon>201912022343360_Changing4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912041703391_KeyCardChange.cs" />
+    <Compile Include="Migrations\201912041703391_KeyCardChange.Designer.cs">
+      <DependentUpon>201912041703391_KeyCardChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912041715173_KeyCardChange1.cs" />
+    <Compile Include="Migrations\201912041715173_KeyCardChange1.Designer.cs">
+      <DependentUpon>201912041715173_KeyCardChange1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912041749110_KeyCardChange11.cs" />
+    <Compile Include="Migrations\201912041749110_KeyCardChange11.Designer.cs">
+      <DependentUpon>201912041749110_KeyCardChange11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912041758435_KeyItemCArd.cs" />
+    <Compile Include="Migrations\201912041758435_KeyItemCArd.Designer.cs">
+      <DependentUpon>201912041758435_KeyItemCArd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912071841412_WishListItem.cs" />
+    <Compile Include="Migrations\201912071841412_WishListItem.Designer.cs">
+      <DependentUpon>201912071841412_WishListItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912071909325_WishListItemUpdated.cs" />
+    <Compile Include="Migrations\201912071909325_WishListItemUpdated.Designer.cs">
+      <DependentUpon>201912071909325_WishListItemUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001231540156_Proba.cs" />
+    <Compile Include="Migrations\202001231540156_Proba.Designer.cs">
+      <DependentUpon>202001231540156_Proba.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AddToRoleModel.cs" />
+    <Compile Include="Models\AjaxCardProduct.cs" />
+    <Compile Include="Models\Brand.cs" />
+    <Compile Include="Models\BrandListViewModel.cs" />
+    <Compile Include="Models\BrandsListViewModel.cs" />
+    <Compile Include="Models\CardItem.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\CategoryViewModel.cs" />
+    <Compile Include="Models\HomePageViewModel.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ProductDetail.cs" />
+    <Compile Include="Models\ShoppingCardList.cs" />
+    <Compile Include="Models\Sunglasses.cs" />
+    <Compile Include="Models\WishListItem.cs" />
+    <Compile Include="Models\WishListItemsByUser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bundler\bundler.js" />
+    <Content Include="bundler\node.exe" />
+    <Content Include="bundler\node_modules\clean-css\index.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\clean.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\colors\hsl-to-hex.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\colors\long-to-short-hex.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\colors\rgb-to-hex.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\colors\shortener.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\images\url-rebase.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\images\url-rewriter.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\imports\inliner.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\properties\optimizer.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\properties\override-compactor.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\properties\processable.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\properties\scanner.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\properties\shorthand-compactor.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\properties\token.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\properties\validator.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\selectors\empty-removal.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\selectors\optimizer.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\selectors\tokenizer.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\text\comments.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\text\escape-store.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\text\expressions.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\text\free.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\text\name-quotes.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\text\quote-scanner.js" />
+    <Content Include="bundler\node_modules\clean-css\lib\text\urls.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\browser.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\cake.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\coffee-script.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\command.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\grammar.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\helpers.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\index.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\lexer.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\nodes.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\optparse.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\parser.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\register.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\repl.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\rewriter.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\scope.js" />
+    <Content Include="bundler\node_modules\coffee-script\lib\coffee-script\sourcemap.js" />
+    <Content Include="bundler\node_modules\debug\browser.js" />
+    <Content Include="bundler\node_modules\debug\debug.js" />
+    <Content Include="bundler\node_modules\debug\node.js" />
+    <Content Include="bundler\node_modules\debug\node_modules\ms\index.js" />
+    <Content Include="bundler\node_modules\less\lib\less\browser.js" />
+    <Content Include="bundler\node_modules\less\lib\less\colors.js" />
+    <Content Include="bundler\node_modules\less\lib\less\encoder.js" />
+    <Content Include="bundler\node_modules\less\lib\less\env.js" />
+    <Content Include="bundler\node_modules\less\lib\less\extend-visitor.js" />
+    <Content Include="bundler\node_modules\less\lib\less\fs.js" />
+    <Content Include="bundler\node_modules\less\lib\less\functions.js" />
+    <Content Include="bundler\node_modules\less\lib\less\import-visitor.js" />
+    <Content Include="bundler\node_modules\less\lib\less\index.js" />
+    <Content Include="bundler\node_modules\less\lib\less\join-selector-visitor.js" />
+    <Content Include="bundler\node_modules\less\lib\less\lessc_helper.js" />
+    <Content Include="bundler\node_modules\less\lib\less\parser.js" />
+    <Content Include="bundler\node_modules\less\lib\less\rhino.js" />
+    <Content Include="bundler\node_modules\less\lib\less\source-map-output.js" />
+    <Content Include="bundler\node_modules\less\lib\less\to-css-visitor.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\alpha.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\anonymous.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\assignment.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\call.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\color.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\comment.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\condition.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\detached-ruleset.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\dimension.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\directive.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\element.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\expression.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\extend.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\import.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\javascript.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\keyword.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\media.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\mixin.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\negative.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\operation.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\paren.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\quoted.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\rule.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\ruleset-call.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\ruleset.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\selector.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\unicode-descriptor.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\url.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\value.js" />
+    <Content Include="bundler\node_modules\less\lib\less\tree\variable.js" />
+    <Content Include="bundler\node_modules\less\lib\less\visitor.js" />
+    <Content Include="bundler\node_modules\lib\parse-js.js" />
+    <Content Include="bundler\node_modules\lib\process.js" />
+    <Content Include="bundler\node_modules\lib\squeeze-more.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\ast.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\browser.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\command.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\grammar.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\index.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\lang-ls.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\lexer.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\livescript.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\mode-ls.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\node.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\optparse.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\parser.js" />
+    <Content Include="bundler\node_modules\LiveScript\lib\slake.js" />
+    <Content Include="bundler\node_modules\nib\iconic\demo.html" />
+    <Content Include="bundler\node_modules\nib\iconic\iconic.css" />
+    <Content Include="bundler\node_modules\nib\iconic\iconic_stroke.svg" />
+    <Content Include="bundler\node_modules\nib\lib\nib.js" />
+    <Content Include="bundler\node_modules\nib\lib\nodes\color-image.js" />
+    <Content Include="bundler\node_modules\nib\lib\nodes\gradient.js" />
+    <Content Include="bundler\node_modules\nib\lib\nodes\vendor-helpers.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\bm.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\index.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\browserify.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\colors.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\convert\css.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\errors.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\functions\image.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\functions\index.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\functions\resolver.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\functions\url.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\lexer.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\middleware.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\arguments.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\binop.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\block.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\boolean.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\call.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\charset.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\comment.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\each.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\expression.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\extend.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\fontface.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\function.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\group.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\hsla.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\ident.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\if.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\import.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\index.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\jsliteral.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\keyframes.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\literal.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\media.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\mozdocument.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\node.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\null.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\page.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\params.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\property.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\return.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\rgba.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\root.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\selector.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\string.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\ternary.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\unaryop.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\nodes\unit.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\parser.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\renderer.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\stack\frame.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\stack\index.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\stack\scope.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\stylus.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\token.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\units.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\utils.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\visitor\compiler.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\visitor\evaluator.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\visitor\index.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\visitor\normalizer.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\clone.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\CSSFontFaceRule.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\CSSImportRule.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\CSSKeyframeRule.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\CSSKeyframesRule.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\CSSMediaRule.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\CSSRule.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\CSSStyleDeclaration.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\CSSStyleRule.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\CSSStyleSheet.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\index.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\MediaList.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\parse.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\lib\StyleSheet.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\examples\pow.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\index.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\chmod.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\clobber.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\mkdirp.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\perm.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\perm_sync.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\race.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\rel.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\return.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\return_sync.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\root.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\sync.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\umask.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\test\umask_sync.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\examples\big-not-pretty.xml" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\examples\example.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\examples\get-products.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\examples\hello-world.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\examples\not-pretty.xml" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\examples\pretty-print.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\examples\shopping.xml" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\examples\test.html" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\examples\test.xml" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\lib\sax.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\LICENSE-W3C.html" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\attribute-name.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\attribute-no-space.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\buffer-overrun.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\case.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\cdata-chunked.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\cdata-end-split.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\cdata-fake-end.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\cdata-multiple.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\cdata.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\cyrillic.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\duplicate-attribute.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\end_empty_stream.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\entities.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\entity-mega.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\flush.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\index.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\issue-23.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\issue-30.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\issue-35.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\issue-47.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\issue-49.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\issue-84.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\parser-position.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\script-close-better.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\script.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\self-closing-child-strict.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\self-closing-child.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\self-closing-tag.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\stray-ending.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\trailing-attribute-no-value.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\trailing-non-whitespace.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\unclosed-root.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\unquoted.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\utf8-split.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\xmlns-as-tag-name.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\xmlns-issue-41.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\xmlns-rebinding.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\xmlns-strict.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\xmlns-unbound-element.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\xmlns-unbound.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\xmlns-xml-default-ns.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\xmlns-xml-default-prefix-attribute.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\xmlns-xml-default-prefix.js" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\test\xmlns-xml-default-redefine.js" />
+    <Content Include="bundler\node_modules\node-sass\build.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\middleware.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\bin\cmd.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\bin\usage.txt" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\examples\pow.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\index.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\example\parse.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\index.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\test\dash.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\test\default_bool.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\test\dotted.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\test\long.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\test\parse.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\test\parse_modified.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\test\short.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\test\whitespace.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\chmod.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\clobber.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\mkdirp.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\opts_fs.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\opts_fs_sync.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\perm.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\perm_sync.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\race.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\rel.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\return.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\return_sync.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\root.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\sync.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\umask.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\test\umask_sync.js" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\object-assign\object-assign.js" />
+    <Content Include="bundler\node_modules\node-sass\sass.js" />
+    <Content Include="bundler\node_modules\step\lib\step.js" />
+    <Content Include="bundler\node_modules\stylus\index.js" />
+    <Content Include="bundler\node_modules\stylus\lib\browserify.js" />
+    <Content Include="bundler\node_modules\stylus\lib\cache\fs.js" />
+    <Content Include="bundler\node_modules\stylus\lib\cache\index.js" />
+    <Content Include="bundler\node_modules\stylus\lib\cache\memory.js" />
+    <Content Include="bundler\node_modules\stylus\lib\cache\null.js" />
+    <Content Include="bundler\node_modules\stylus\lib\colors.js" />
+    <Content Include="bundler\node_modules\stylus\lib\convert\css.js" />
+    <Content Include="bundler\node_modules\stylus\lib\errors.js" />
+    <Content Include="bundler\node_modules\stylus\lib\functions\image.js" />
+    <Content Include="bundler\node_modules\stylus\lib\functions\index.js" />
+    <Content Include="bundler\node_modules\stylus\lib\functions\resolver.js" />
+    <Content Include="bundler\node_modules\stylus\lib\functions\url.js" />
+    <Content Include="bundler\node_modules\stylus\lib\lexer.js" />
+    <Content Include="bundler\node_modules\stylus\lib\middleware.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\arguments.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\atblock.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\atrule.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\binop.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\block.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\boolean.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\call.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\charset.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\comment.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\each.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\expression.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\extend.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\function.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\group.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\hsla.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\ident.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\if.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\import.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\index.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\keyframes.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\literal.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\media.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\member.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\namespace.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\node.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\null.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\object.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\params.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\property.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\query-expression.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\query-list.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\query.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\return.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\rgba.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\root.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\selector.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\string.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\ternary.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\unaryop.js" />
+    <Content Include="bundler\node_modules\stylus\lib\nodes\unit.js" />
+    <Content Include="bundler\node_modules\stylus\lib\parser.js" />
+    <Content Include="bundler\node_modules\stylus\lib\renderer.js" />
+    <Content Include="bundler\node_modules\stylus\lib\stack\frame.js" />
+    <Content Include="bundler\node_modules\stylus\lib\stack\index.js" />
+    <Content Include="bundler\node_modules\stylus\lib\stack\scope.js" />
+    <Content Include="bundler\node_modules\stylus\lib\stylus.js" />
+    <Content Include="bundler\node_modules\stylus\lib\token.js" />
+    <Content Include="bundler\node_modules\stylus\lib\units.js" />
+    <Content Include="bundler\node_modules\stylus\lib\utils.js" />
+    <Content Include="bundler\node_modules\stylus\lib\visitor\compiler.js" />
+    <Content Include="bundler\node_modules\stylus\lib\visitor\deps-resolver.js" />
+    <Content Include="bundler\node_modules\stylus\lib\visitor\evaluator.js" />
+    <Content Include="bundler\node_modules\stylus\lib\visitor\index.js" />
+    <Content Include="bundler\node_modules\stylus\lib\visitor\normalizer.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\css-parse\index.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\examples\g.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\examples\usr-local.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\glob.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\inherits\inherits.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\inherits\inherits_browser.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\inherits\test.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\minimatch.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\lru-cache\lib\lru-cache.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\lru-cache\test\basic.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\lru-cache\test\foreach.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\lru-cache\test\memory-leak.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\sigmund\bench.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\sigmund\sigmund.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\sigmund\test\basic.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\test\basic.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\test\brace-expand.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\test\caching.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\test\defaults.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\test\extglob-ending-with-state-char.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\00-setup.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\bash-comparison.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\cwd-test.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\globstar-match.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\mark.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\new-glob-optional-options.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\nocase-nomagic.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\pause-resume.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\readme-issue.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\root-nomount.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\root.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\stat.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\zz-cleanup.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\examples\pow.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\index.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\chmod.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\clobber.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\mkdirp.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\perm.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\perm_sync.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\race.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\rel.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\return.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\return_sync.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\root.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\sync.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\umask.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\test\umask_sync.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\examples\big-not-pretty.xml" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\examples\example.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\examples\get-products.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\examples\hello-world.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\examples\not-pretty.xml" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\examples\pretty-print.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\examples\shopping.xml" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\examples\test.html" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\examples\test.xml" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\lib\sax.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\LICENSE-W3C.html" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\attribute-name.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\attribute-no-space.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\buffer-overrun.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\case.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\cdata-chunked.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\cdata-end-split.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\cdata-fake-end.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\cdata-multiple.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\cdata.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\cyrillic.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\duplicate-attribute.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\end_empty_stream.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\entities.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\entity-mega.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\flush.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\index.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\issue-23.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\issue-30.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\issue-35.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\issue-47.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\issue-49.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\issue-84.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\parser-position.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\script-close-better.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\script.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\self-closing-child-strict.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\self-closing-child.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\self-closing-tag.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\stray-ending.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\trailing-attribute-no-value.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\trailing-non-whitespace.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\unclosed-root.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\unquoted.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\utf8-split.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\xmlns-as-tag-name.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\xmlns-issue-41.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\xmlns-rebinding.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\xmlns-strict.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\xmlns-unbound-element.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\xmlns-unbound.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\xmlns-xml-default-ns.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\xmlns-xml-default-prefix-attribute.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\xmlns-xml-default-prefix.js" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\test\xmlns-xml-default-redefine.js" />
+    <Content Include="bundler\node_modules\uglify-js.js" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery-ui.structure.css" />
+    <Content Include="Content\jquery-ui.theme.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="README.txt" />
+    <Content Include="bundler\uglifyjs" />
+    <Content Include="bundler\package.json" />
+    <Content Include="bundler\node_modules\stylus\Readme.md" />
+    <Content Include="bundler\node_modules\stylus\package.json" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\README.md" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\package.json" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\LICENSE" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\examples\strict.dtd" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\component.json" />
+    <Content Include="bundler\node_modules\stylus\node_modules\sax\AUTHORS" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\readme.markdown" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\package.json" />
+    <Content Include="bundler\node_modules\stylus\node_modules\mkdirp\LICENSE" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\test\bash-results.json" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\README.md" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\package.json" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\README.md" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\package.json" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\sigmund\README.md" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\sigmund\package.json" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\sigmund\LICENSE" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\lru-cache\README.md" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\lru-cache\package.json" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\lru-cache\LICENSE" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\node_modules\lru-cache\CONTRIBUTORS" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\minimatch\LICENSE" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\inherits\README.md" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\inherits\package.json" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\node_modules\inherits\LICENSE" />
+    <Content Include="bundler\node_modules\stylus\node_modules\glob\LICENSE" />
+    <Content Include="bundler\node_modules\stylus\node_modules\css-parse\Readme.md" />
+    <Content Include="bundler\node_modules\stylus\node_modules\css-parse\package.json" />
+    <Content Include="bundler\node_modules\stylus\LICENSE" />
+    <Content Include="bundler\node_modules\stylus\lib\functions\index.styl" />
+    <Content Include="bundler\node_modules\stylus\bin\stylus" />
+    <Content Include="bundler\node_modules\step\package.json" />
+    <Content Include="bundler\node_modules\node-sass\README.md" />
+    <Content Include="bundler\node_modules\node-sass\package.json" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\object-assign\readme.md" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\object-assign\package.json" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\README.md" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\package.json" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\readme.markdown" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\package.json" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\readme.markdown" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\package.json" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\node_modules\minimist\LICENSE" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\node_modules\mkdirp\LICENSE" />
+    <Content Include="bundler\node_modules\node-sass\node_modules\node-sass-middleware\LICENSE" />
+    <Content Include="bundler\node_modules\node-sass\CONTRIBUTING.md" />
+    <Content Include="bundler\node_modules\node-sass\bin\win32-x64-v8-3.14\binding.node" />
+    <Content Include="bundler\node_modules\node-sass\bin\win32-ia32-v8-3.14\binding.node" />
+    <Content Include="bundler\node_modules\node-sass\bin\node-sass" />
+    <Content Include="bundler\node_modules\node-sass\bin\darwin-x64-v8-3.14\binding.node" />
+    <Content Include="bundler\node_modules\nib\Readme.md" />
+    <Content Include="bundler\node_modules\nib\package.json" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\Readme.md" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\package.json" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\README.md" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\package.json" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\LICENSE" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\examples\strict.dtd" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\component.json" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\sax\AUTHORS" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\readme.markdown" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\package.json" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\mkdirp\LICENSE" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\README.mdown" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\node_modules\cssom\package.json" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\LICENSE" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\lib\functions\index.styl" />
+    <Content Include="bundler\node_modules\nib\node_modules\stylus\bin\stylus" />
+    <Content Include="bundler\node_modules\nib\LICENSE" />
+    <Content Include="bundler\node_modules\nib\lib\nib\vendor.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\text\replace-text.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\text\index.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\text\hide-text.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\text\ellipsis.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\text\aliases.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\size.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\reset.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\positions.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\overflow.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\index.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\image.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\iconic.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\gradients.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\flex.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\config.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\color-image.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\clearfix.styl" />
+    <Content Include="bundler\node_modules\nib\lib\nib\border.styl" />
+    <Content Include="bundler\node_modules\nib\index.styl" />
+    <Content Include="bundler\node_modules\nib\iconic\iconic_stroke.ttf" />
+    <Content Include="bundler\node_modules\nib\iconic\iconic_stroke.otf" />
+    <Content Include="bundler\node_modules\nib\iconic\iconic_stroke.eot" />
+    <Content Include="bundler\node_modules\LiveScript\package.json" />
+    <Content Include="bundler\node_modules\LiveScript\bin\slake" />
+    <Content Include="bundler\node_modules\LiveScript\bin\lsc" />
+    <Content Include="bundler\node_modules\LiveScript\bin\livescript" />
+    <Content Include="bundler\node_modules\less\package.json" />
+    <Content Include="bundler\node_modules\less\bin\lessc" />
+    <Content Include="bundler\node_modules\debug\Readme.md" />
+    <Content Include="bundler\node_modules\debug\package.json" />
+    <Content Include="bundler\node_modules\debug\node_modules\ms\README.md" />
+    <Content Include="bundler\node_modules\debug\node_modules\ms\package.json" />
+    <Content Include="bundler\node_modules\debug\Makefile" />
+    <Content Include="bundler\node_modules\debug\History.md" />
+    <Content Include="bundler\node_modules\debug\component.json" />
+    <Content Include="bundler\node_modules\coffee-script\package.json" />
+    <Content Include="bundler\node_modules\coffee-script\bin\coffee" />
+    <Content Include="bundler\node_modules\coffee-script\bin\cake" />
+    <Content Include="bundler\node_modules\clean-css\bin\cleancss" />
+    <Content Include="bundler\LICENSE" />
+    <Content Include="bundler\coffee.cmd" />
+    <Content Include="bundler\bundler.cmd" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Brands\Create.cshtml" />
+    <Content Include="Views\Brands\Delete.cshtml" />
+    <Content Include="Views\Brands\Details.cshtml" />
+    <Content Include="Views\Brands\Edit.cshtml" />
+    <Content Include="Views\Brands\Index.cshtml" />
+    <Content Include="Views\Brands\List.cshtml" />
+    <Content Include="Views\Sunglasses\Create.cshtml" />
+    <Content Include="Views\Sunglasses\Delete.cshtml" />
+    <Content Include="Views\Sunglasses\Details.cshtml" />
+    <Content Include="Views\Sunglasses\Edit.cshtml" />
+    <Content Include="Views\Sunglasses\Index.cshtml" />
+    <Content Include="Views\CardItems\Delete.cshtml" />
+    <Content Include="Views\CardItems\Details.cshtml" />
+    <Content Include="Views\CardItems\Edit.cshtml" />
+    <Content Include="Views\CardItems\Index.cshtml" />
+    <Content Include="Views\Sunglasses\Category.cshtml" />
+    <Content Include="Views\Sunglasses\HomePage.cshtml" />
+    <Content Include="Views\Sunglasses\ProductDetail.cshtml" />
+    <Content Include="Views\CardItems\ShoppingCard.cshtml" />
+    <Content Include="Views\Account\AddUserToRole.cshtml" />
+    <Content Include="Views\Brands\SunglassesByBrand.cshtml" />
+    <Content Include="Views\WishListItems\Create.cshtml" />
+    <Content Include="Views\WishListItems\Delete.cshtml" />
+    <Content Include="Views\WishListItems\Details.cshtml" />
+    <Content Include="Views\WishListItems\Edit.cshtml" />
+    <Content Include="Views\WishListItems\Index.cshtml" />
+    <Content Include="Views\WishListItems\WishList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201911281139135_FirstMigration.resx">
+      <DependentUpon>201911281139135_FirstMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911281155243_ModelsCreated.resx">
+      <DependentUpon>201911281155243_ModelsCreated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911282156333_Update.resx">
+      <DependentUpon>201911282156333_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911302123513_CardItemCreated.resx">
+      <DependentUpon>201911302123513_CardItemCreated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911302231262_ShoppingCardCreated.resx">
+      <DependentUpon>201911302231262_ShoppingCardCreated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912011603085_NotNullId.resx">
+      <DependentUpon>201912011603085_NotNullId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912011749227_UpdatedCardItem.resx">
+      <DependentUpon>201912011749227_UpdatedCardItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912011754167_UpdatedCardItem2.resx">
+      <DependentUpon>201912011754167_UpdatedCardItem2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912022045256_CardItemKey.resx">
+      <DependentUpon>201912022045256_CardItemKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912022232367_Changing.resx">
+      <DependentUpon>201912022232367_Changing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912022317396_Changing2.resx">
+      <DependentUpon>201912022317396_Changing2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912022325585_Changing3.resx">
+      <DependentUpon>201912022325585_Changing3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912022343360_Changing4.resx">
+      <DependentUpon>201912022343360_Changing4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912041703391_KeyCardChange.resx">
+      <DependentUpon>201912041703391_KeyCardChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912041715173_KeyCardChange1.resx">
+      <DependentUpon>201912041715173_KeyCardChange1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912041749110_KeyCardChange11.resx">
+      <DependentUpon>201912041749110_KeyCardChange11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912041758435_KeyItemCArd.resx">
+      <DependentUpon>201912041758435_KeyItemCArd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912071841412_WishListItem.resx">
+      <DependentUpon>201912071841412_WishListItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912071909325_WishListItemUpdated.resx">
+      <DependentUpon>201912071909325_WishListItemUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001231540156_Proba.resx">
+      <DependentUpon>202001231540156_Proba.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50405</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44385/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

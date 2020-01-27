@@ -1,0 +1,89 @@
+﻿@model WebApplication7.Models.WishListItemsByUser
+@{
+    ViewBag.Title = "WishList";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>WishList</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="">
+        <div class="">
+            <div class="row d-flex">
+                <div class="col text-capitalize">
+                    <h5>
+                        Your wishlist
+                    </h5>
+                </div>
+                <div class="col d-flex justify-content-end">
+                    <span><i>Items:@Model.list.Count</i></span>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-around">
+                <div class="col">
+                    <span style="width:200px"></span>
+                </div>
+                <div class="col">
+                    <span>Name</span>
+                </div>
+                <div class="col">
+                    <span>Quantity</span>
+                </div>
+                <div class="col">
+                    <span>
+                        Price
+                    </span>
+                </div>
+            </div>
+            @foreach (var item in Model.list)
+            {
+                <div class="row d-flex justify-content-around m-3 bg-dark">
+                    <div class="col mt-2 mb-2">
+                        <img src=@item.Sunglasses.imgUrl width="200px" height="120px" />
+                    </div>
+                    <div class="col">
+                        <span class="text-light">@item.Sunglasses.Name</span>
+                    </div>               
+                    <div class="col">
+                        <span class="text-light">
+                            @item.Sunglasses.Price
+                        </span>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-outline-danger" onclick="Delete(@item.Id)">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            }          
+           
+        </div>
+    </div>
+    <div id="dialog1" title="Buy products?" hidden="hidden"></div>
+    <script>
+        function Delete(id) {
+            var obj = { id: id };
+            $.ajax({
+                type: 'POST',
+                url: '/WishListItems/DeleteWishListItem',
+                data: JSON.stringify(obj),
+                contentType: 'application/json; charset=utf-8',
+                 success: function (data) {
+                    window.location.reload();
+                },
+                error: function () {
+                    alert("error");
+                }
+            });
+        }   
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,45 @@
+﻿
+@model WebApplication7.Models.BrandListViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Category</title>
+</head>
+<body>
+ 
+    <div class="">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-3 text-white">
+                    <a class="fa fa-arrow-left" href=#>Return</a>
+                </div>
+                <div class="col">
+                    <h1 class="text-white text-bolder text-uppercase">@Model.brand</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        @foreach (var item in Model.listSunglasses)
+                        {
+                            <div class="col-6 mt-2 mb-2">
+                                <a href=@Url.Action("ProductDetail", "Sunglasses", new { id = item.Id })>
+                                    <img class="img-thumbnail" src=@item.imgUrl>
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+
+    </div>
+</body>
+</html>

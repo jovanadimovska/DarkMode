@@ -1,0 +1,100 @@
+﻿@model WebApplication7.Models.ProductDetail
+@{
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ProducDetails</title>
+</head>
+<body>
+   
+    <div >
+        <div class="container text-capitalize text-white m-3">
+            <div class="row">
+                <div class="col-6">
+                    <img src=@Model.sunglasses.imgUrl class="img-thumbnail">
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <h2 class="font-weight-bold">Serial Number: @Model.sunglasses.Id</h2>
+                    </div>
+                    <div class="row">
+                        <h3 class="font-weight-bolder">Price: @Model.sunglasses.Price</h3>
+                    </div>
+                    <div class="row">
+                        <span>Rating: @Model.sunglasses.rating/5</span>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <button class="btn btn-outline-dark" id="addToCard" onclick="AddToShoppingCard()">Add to card</button>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <button id="addToWishList" class="btn btn-outline-dark" onclick="AddToWishList()">Add to wishlist</button>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <h3>Other sunglasses you may like</h3>
+
+                    </div>
+                    <div class="row">
+                        @foreach (var item in Model.listSimilar)
+                        {
+                            <div class="col-5 mt-2 mb-2 ">
+                                <a href=@Url.Action("ProductDetail", "Sunglasses", new { id = item.Id })><img class="img-thumbnail" src=@item.imgUrl ></a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    <script type="text/javascript">
+        function AddToShoppingCard() {
+            var obj = { SunglassesId : @Model.sunglasses.Id.ToString() };
+            $.ajax({
+                type: 'POST',
+                url: '/CardItems/ShoppingCard',  
+                data: JSON.stringify(obj),
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    alert("Item added to cart");
+                },
+                error: function () {
+                    alert("error");
+                }
+            });
+        }
+        function AddToWishList() {
+            var obj = { SunglassesId : @Model.sunglasses.Id.ToString() };
+            $.ajax({
+                type: 'POST',
+                url: '/WishListItems/WishList',  
+                data: JSON.stringify(obj),
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    alert("Item added to wishlist");
+                },
+                error: function () {
+                    alert("error");
+                }
+            });
+        }
+    </script>
+
+        
+   
+
+</body>
+</html>
+
+

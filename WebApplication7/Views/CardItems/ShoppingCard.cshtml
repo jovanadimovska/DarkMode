@@ -1,0 +1,171 @@
+﻿@model WebApplication7.Models.ShoppingCardList
+
+@{
+    ViewBag.Title = "ShoppingCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShoppingCart</title>
+    <style>
+    </style>
+</head>
+<body>
+    
+    <div class="">
+        <div class="container">
+            <div class="row d-flex">
+                <div class="col text-capitalize">
+                    <h5>
+                        Your shopping cart
+                    </h5>
+                </div>
+                <div class="col d-flex justify-content-end">
+                    <span><i>Items:@Model.list.Count</i></span>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-around">
+                <div class="col">
+                    <span style="width:200px"></span>
+                </div>
+                <div class="col">
+                    <span>Name</span>
+                </div>
+                <div class="col">
+                    <span>Quantity</span>
+                </div>
+                <div class="col">
+                    <span>
+                        Price
+                    </span>
+                </div>
+            </div>
+            @foreach (var item in Model.list)
+            {
+        <div class="row d-flex justify-content-around mt-2 mb-2  bg-dark">
+            <div class="col">
+                <img src=@item.Sunglasses.imgUrl width="200px" height="120px" />
+            </div>
+            <div class="col">
+                <span class="text-light">@item.Sunglasses.Name</span>
+            </div>
+            <div class="col">
+                <span class="text-light">@item.Quantity</span>
+            </div>
+            <div class="col">
+                <span class="text-light">
+                    @item.Sunglasses.Price
+                </span>
+            </div>
+            <div class="col">
+                <button class="btn btn-outline-danger" onclick="Delete(@item.Id)">
+                    Delete
+                </button>
+            </div>
+            <div class="col">
+                <button class="btn btn-outline-light" onclick="Up(@item.Id)">
+                    Up
+                </button>
+            </div>
+            <div class="col">
+                <button class="btn btn-outline-light" onclick="Down(@item.Id)">
+                    Down
+                </button>
+            </div>
+        </div>
+            }
+            <div class="row d-flex m-2">
+                <div class="col">
+                    <span>@Model.total</span>
+                </div>
+                <div class="col d-flex justify-content-end">
+                    <button class="btn btn-outline-dark" onclick="BuyProducts()">
+                        Buy
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div id="dialog1" title="Buy products?" hidden="hidden"></div>
+    <script>
+               (function () {
+            $("#dialog1").dialog({
+                autoOpen: false
+            });
+        });
+        function Delete(id) {
+            var obj = { id: id };
+            $.ajax({
+                type: 'POST',
+                url: '/CardItems/DeleteCardItem',  
+                data: JSON.stringify(obj),
+                contentType: 'application/json; charset=utf-8',
+                 success: function (data) {
+                    window.location.reload();
+                },
+                error: function () {
+                    alert("error");
+                }
+            });
+        }
+        function Up(id) {
+            var obj = { id: id };
+            $.ajax({
+                type: 'POST',
+                url: '/CardItems/DownCardItem',  
+                data: JSON.stringify(obj),
+                contentType: 'application/json; charset=utf-8',
+                 success: function (data) {
+                    window.location.reload();
+                },
+                error: function () {
+                    alert("error");
+                }
+            });
+        }
+        function Down(id) {
+            var obj = { id: id };
+            $.ajax({
+                type: 'POST',
+                url: '/CardItems/UpCardItem',  
+                data: JSON.stringify(obj),
+                contentType: 'application/json; charset=utf-8',
+                 success: function (data) {
+                    window.location.reload();
+                },
+                error: function () {
+                    alert("error");
+                }
+            });
+        }
+        function BuyProducts(event) {
+            $("#dialog1").dialog({
+                open: function (event, ui) {
+                    $(this).html("<span>Total:</span>");
+                },
+                close: function () {
+                    $(this).remove();
+                },
+                resizable: false,
+                height: 140,
+                modal: true,
+                buttons: {
+                    'Yes': function () {
+                        $(this).dialog('close');
+                    },
+                    'No': function () {
+                        $(this).dialog('close');
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
