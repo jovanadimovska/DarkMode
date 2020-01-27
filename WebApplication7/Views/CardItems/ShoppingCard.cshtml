@@ -12,12 +12,15 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>ShoppingCart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
         .nopadding {
-   padding: 0 !important;
-   margin: 0 !important;
-}
+            padding: 0 !important;
+            margin: 0 !important;
+        }
     </style>
+
 </head>
 <body>
     
@@ -66,12 +69,12 @@
                     <span class="text-light col nopadding text-center" >@item.Quantity</span>
                     <div class="col nopadding">
                         <button class="btn btn-outline-light" onclick="Up(@item.Id)">
-                            Up
+                            <i class="fa fa-arrow-up"></i>
                         </button>
                     </div>
                     <div class="col nopadding">
                         <button class="btn btn-outline-light" onclick="Down(@item.Id)">
-                            Down
+                            <i class="fa fa-arrow-down"></i>
                         </button>
                     </div>
                     <div class="col">
@@ -81,7 +84,7 @@
             </div>
             <div class="col align-self-center">
                 <span class="text-light">
-                    @item.Sunglasses.Price
+                    @item.Sunglasses.Price$
                 </span>
             </div>
             <div class="col align-self-center">
@@ -94,7 +97,7 @@
             }
             <div class="row d-flex m-2">
                 <div class="col">
-                    <span>Total: @Model.total</span>
+                    <span>Total: @Model.total$</span>
                 </div>
                 <div class="col d-flex justify-content-end">
                     <button class="btn btn-outline-dark" onclick="BuyProducts()">
@@ -149,7 +152,12 @@
                 url: '/CardItems/UpCardItem',  
                 data: JSON.stringify(obj),
                 contentType: 'application/json; charset=utf-8',
-                
+                   success: function (data) {
+                    window.location.reload();
+                },
+                error: function () {
+                    alert("error");
+                }
             });
         }
         function BuyProducts(event) {
