@@ -13,6 +13,10 @@
     <meta name="viewport" content="width=device-width" />
     <title>ShoppingCart</title>
     <style>
+        .nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
     </style>
 </head>
 <body>
@@ -33,55 +37,64 @@
                 <div class="col">
                     <span style="width:200px"></span>
                 </div>
-                <div class="col">
-                    <span>Name</span>
+                <div class="col"> 
+                    <span style="    padding-left: 38px;">Name</span>
                 </div>
-                <div class="col">
-                    <span>Quantity</span>
+                <div class="col  ">
+                    <span style="    padding-left: 35px;">Quantity</span>
                 </div>
                 <div class="col">
                     <span>
                         Price
                     </span>
                 </div>
+                <div class="col">
+                    <span style="width:200px"></span>
+                </div>
             </div>
             @foreach (var item in Model.list)
             {
-        <div class="row d-flex justify-content-around mt-2 mb-2  bg-dark">
-            <div class="col">
+        <div class="row d-flex justify-content-around m-3 bg-dark">
+            <div class="col  mt-2 mb-2">
                 <img src=@item.Sunglasses.imgUrl width="200px" height="120px" />
             </div>
-            <div class="col">
+            <div class="col align-self-center">
                 <span class="text-light">@item.Sunglasses.Name</span>
             </div>
-            <div class="col">
-                <span class="text-light">@item.Quantity</span>
+            <div class="col align-self-center">
+                <div class="row  text-center">
+                    <span class="text-light col nopadding text-center" >@item.Quantity</span>
+                    <div class="col nopadding">
+                        <button class="btn btn-outline-light" onclick="Up(@item.Id)">
+                            Up
+                        </button>
+                    </div>
+                    <div class="col nopadding">
+                        <button class="btn btn-outline-light" onclick="Down(@item.Id)">
+                            Down
+                        </button>
+                    </div>
+                    <div class="col">
+                        <span style="width:20px"></span>
+                    </div>
+                </div>
             </div>
-            <div class="col">
+            <div class="col align-self-center">
                 <span class="text-light">
                     @item.Sunglasses.Price
                 </span>
             </div>
-            <div class="col">
+            <div class="col align-self-center">
                 <button class="btn btn-outline-danger" onclick="Delete(@item.Id)">
                     Delete
                 </button>
             </div>
-            <div class="col">
-                <button class="btn btn-outline-light" onclick="Up(@item.Id)">
-                    Up
-                </button>
-            </div>
-            <div class="col">
-                <button class="btn btn-outline-light" onclick="Down(@item.Id)">
-                    Down
-                </button>
-            </div>
+            
         </div>
             }
             <div class="row d-flex m-2">
                 <div class="col">
-                    <span>@Model.total</span>
+                    <span>Total: @Model.total</span>
                 </div>
                 <div class="col d-flex justify-content-end">
                     <button class="btn btn-outline-dark" onclick="BuyProducts()">

@@ -31,37 +31,35 @@
                     <span style="width:200px"></span>
                 </div>
                 <div class="col">
-                    <span>Name</span>
+                    <span  style="    padding-left: 15px;">Name</span>
                 </div>
                 <div class="col">
-                    <span>Quantity</span>
+                    <span>Price</span>
                 </div>
                 <div class="col">
-                    <span>
-                        Price
-                    </span>
+                    <span style="width:200px"></span>
                 </div>
             </div>
             @foreach (var item in Model.list)
             {
-                <div class="row d-flex justify-content-around m-3 bg-dark">
-                    <div class="col mt-2 mb-2">
-                        <img src=@item.Sunglasses.imgUrl width="200px" height="120px" />
-                    </div>
-                    <div class="col">
-                        <span class="text-light">@item.Sunglasses.Name</span>
-                    </div>               
-                    <div class="col">
-                        <span class="text-light">
-                            @item.Sunglasses.Price
-                        </span>
-                    </div>
-                    <div class="col">
-                        <button class="btn btn-outline-danger" onclick="Delete(@item.Id)">
-                            Delete
-                        </button>
-                    </div>
-                </div>
+        <div class="row d-flex justify-content-around m-3 bg-dark">
+            <div class="col mt-2 mb-2">
+                <img src=@item.Sunglasses.imgUrl width="200px" height="120px" />
+            </div>
+            <div class="col align-self-center">
+                <span class="text-light">@item.Sunglasses.Name</span>
+            </div>
+            <div class="col align-self-center">
+                <span class="text-light">
+                    @item.Sunglasses.Price
+                </span>
+            </div>
+            <div class="col align-self-center">
+                <button class="btn btn-outline-danger" onclick="Delete(@item.Id)">
+                    Delete
+                </button>
+            </div>
+        </div>
             }          
            
         </div>
