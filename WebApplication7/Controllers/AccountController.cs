@@ -364,7 +364,7 @@ namespace WebApplication7.Controllers
 
         //
         // POST: /Account/ExternalLoginConfirmation
-        [HttpPost]
+        //[HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ExternalLoginConfirmation(ExternalLoginConfirmationViewModel model, string returnUrl)
@@ -407,7 +407,7 @@ namespace WebApplication7.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("HomePage", "Sunglasses");
         }
 
         //
