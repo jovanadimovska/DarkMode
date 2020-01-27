@@ -175,6 +175,16 @@ namespace WebApplication7.Controllers
             }
             return Json(new { Success = true });
         }
+        [HttpPost]
+        public ActionResult BuyProducts()
+        {
+
+            foreach (var entity in db.CardItems)
+                db.CardItems.Remove(entity);
+            db.SaveChanges();
+
+            return RedirectToAction("ShoppingCard");
+        }
         // POST: CardItems/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

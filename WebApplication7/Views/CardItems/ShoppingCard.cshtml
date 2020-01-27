@@ -149,12 +149,7 @@
                 url: '/CardItems/UpCardItem',  
                 data: JSON.stringify(obj),
                 contentType: 'application/json; charset=utf-8',
-                 success: function (data) {
-                    window.location.reload();
-                },
-                error: function () {
-                    alert("error");
-                }
+                
             });
         }
         function BuyProducts(event) {
@@ -171,12 +166,26 @@
                 buttons: {
                     'Yes': function () {
                         $(this).dialog('close');
+                                     var obj = {};
+             $.ajax({
+                type: 'POST',
+                url: '/CardItems/BuyProducts',  
+                data: JSON.stringify(obj),
+                contentType: 'application/json; charset=utf-8',
+                 success: function (data) {
+                    window.location.reload();
+                },
+                error: function () {
+                    alert("error");
+                }
+            });
                     },
                     'No': function () {
                         $(this).dialog('close');
                     }
                 }
             });
+
         }
     </script>
 </body>
