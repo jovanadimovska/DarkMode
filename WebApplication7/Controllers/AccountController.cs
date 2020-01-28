@@ -361,7 +361,13 @@ namespace WebApplication7.Controllers
                     return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
             }
         }
-
+        public ActionResult Logout()
+        {
+            Session["LoggedData"] = null;
+            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            Session.Abandon();
+            return RedirectToAction("HomePage", "Sunglasses");
+        }
         //
         // POST: /Account/ExternalLoginConfirmation
         //[HttpPost]
