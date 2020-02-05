@@ -21,6 +21,8 @@ namespace WebApplication7.Controllers
             db.SaveChanges();
             return Json(new { Success = true });
         }
+        [Authorize]
+       
         public ActionResult WishList()
         {
             WishListItemsByUser model = new WishListItemsByUser();
@@ -30,6 +32,7 @@ namespace WebApplication7.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult WishList(string SunglassesId)
         {
             int ID = Int32.Parse(SunglassesId);
@@ -48,6 +51,8 @@ namespace WebApplication7.Controllers
                  return Json(new { success = true });
         }
         // GET: WishListItems
+        [Authorize]
+        [Authorize(Roles = "ADMIN")]
         public ActionResult Index()
         {
             var wishListItems = db.WishListItems.Include(w => w.Sunglasses);
@@ -55,6 +60,8 @@ namespace WebApplication7.Controllers
         }
 
         // GET: WishListItems/Details/5
+        [Authorize]
+        [Authorize(Roles = "ADMIN")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -70,6 +77,8 @@ namespace WebApplication7.Controllers
         }
 
         // GET: WishListItems/Create
+        [Authorize]
+        [Authorize(Roles = "ADMIN")]
         public ActionResult Create()
         {
             ViewBag.SunglassesId = new SelectList(db.Sunglasses, "Id", "Name");
@@ -81,6 +90,8 @@ namespace WebApplication7.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
+        [Authorize(Roles = "ADMIN")]
         public ActionResult Create([Bind(Include = "Id,User,SunglassesId")] WishListItem wishListItem)
         {
             if (ModelState.IsValid)
@@ -95,6 +106,8 @@ namespace WebApplication7.Controllers
         }
 
         // GET: WishListItems/Edit/5
+        [Authorize]
+        [Authorize(Roles = "ADMIN")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -115,6 +128,8 @@ namespace WebApplication7.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
+        [Authorize(Roles = "ADMIN")]
         public ActionResult Edit([Bind(Include = "Id,User,SunglassesId")] WishListItem wishListItem)
         {
             if (ModelState.IsValid)
@@ -128,6 +143,8 @@ namespace WebApplication7.Controllers
         }
 
         // GET: WishListItems/Delete/5
+        [Authorize]
+        [Authorize(Roles = "ADMIN")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -145,6 +162,8 @@ namespace WebApplication7.Controllers
         // POST: WishListItems/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
+        [Authorize(Roles = "ADMIN")]
         public ActionResult DeleteConfirmed(int id)
         {
             WishListItem wishListItem = db.WishListItems.Find(id);

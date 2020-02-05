@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using WebApplication7.Models;
@@ -17,6 +18,7 @@ namespace WebApplication7.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         public AccountController()
         {
@@ -51,22 +53,31 @@ namespace WebApplication7.Controllers
                 _userManager = value;
             }
         }
+        [Authorize]
+
+        [Authorize(Roles = "ADMIN")]
         public ActionResult AddUserToRole()
         {
             AddToRoleModel model = new AddToRoleModel();
             model.roles = new System.Collections.Generic.List<string>();
-            model.roles.Add("Admin");
-            model.roles.Add("Editor");
-            model.roles.Add("User");
+            
+            model.roles.Add("ADMIN");
+            model.roles.Add("USER");
             return View(model);
         }
+        [Authorize]
+
+        [Authorize(Roles = "ADMIN")]
         [HttpPost]
+
         public ActionResult AddUserToRole(AddToRoleModel model)
         {
             var user = UserManager.FindByEmail(model.Email);
             UserManager.AddToRole(user.Id, model.Role);
             return RedirectToAction("Index", "Sunglasses");
         }
+       
+       
         //
         // GET: /Account/Login
         [AllowAnonymous]
@@ -177,7 +188,8 @@ namespace WebApplication7.Controllers
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
+                   
+                    UserManager.AddToRole(user.Id, "USER");
                     return RedirectToAction("HomePage", "Sunglasses");
                 }
                 AddErrors(result);

@@ -10,5 +10,6 @@ namespace WebApplication7
         {
             ConfigureAuth(app);
         }
+
     }
 }

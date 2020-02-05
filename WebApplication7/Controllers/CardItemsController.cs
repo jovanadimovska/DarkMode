@@ -11,9 +11,13 @@ using WebApplication7.Models;
 
 namespace WebApplication7.Controllers
 {
+
+
+
     public class CardItemsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        [Authorize]
         public ActionResult ShoppingCard()
         {
             ShoppingCardList model = new ShoppingCardList();
@@ -27,7 +31,7 @@ namespace WebApplication7.Controllers
             }
             return View(model);
         }
-
+        [Authorize]
         [HttpPost]
         public ActionResult ShoppingCard(string SunglassesId)
         {
@@ -57,6 +61,8 @@ namespace WebApplication7.Controllers
 
         }
         // GET: CardItems
+        [Authorize]
+        [Authorize(Roles = "ADMIN")]
         public ActionResult Index()
         {
             var cardItems = db.CardItems.Include(c => c.Sunglasses);
@@ -64,6 +70,8 @@ namespace WebApplication7.Controllers
         }
 
         // GET: CardItems/Details/5
+        [Authorize]
+        [Authorize(Roles = "ADMIN")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -79,6 +87,8 @@ namespace WebApplication7.Controllers
         }
 
         // GET: CardItems/Create
+        [Authorize]
+        [Authorize(Roles = "ADMIN")]
         public ActionResult Create()
         {
             ViewBag.SunglassesId = new SelectList(db.Sunglasses, "Id", "Name");
@@ -90,6 +100,8 @@ namespace WebApplication7.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
+        [Authorize(Roles = "ADMIN")]
         public ActionResult Create([Bind(Include = "Id,User,Quantity,SunglassesId")] CardItem cardItem)
         {
             if (ModelState.IsValid)
@@ -104,6 +116,8 @@ namespace WebApplication7.Controllers
         }
 
         // GET: CardItems/Edit/5
+        [Authorize]
+        [Authorize(Roles = "ADMIN")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -124,6 +138,8 @@ namespace WebApplication7.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
+        [Authorize(Roles = "ADMIN")]
         public ActionResult Edit([Bind(Include = "Id,User,Quantity,SunglassesId")] CardItem cardItem)
         {
             if (ModelState.IsValid)
@@ -137,6 +153,8 @@ namespace WebApplication7.Controllers
         }
 
         // GET: CardItems/Delete/5
+        [Authorize]
+        [Authorize(Roles = "ADMIN")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -151,6 +169,7 @@ namespace WebApplication7.Controllers
             return View(cardItem);
         }
         [HttpPost]
+        [Authorize]
         public ActionResult DeleteCardItem(int? id)
         {
             CardItem cardItem = db.CardItems.Find(id);
@@ -159,6 +178,7 @@ namespace WebApplication7.Controllers
             return Json(new { Success = true});
         }
         [HttpPost]
+        [Authorize]
         public ActionResult DownCardItem(int? id)
         {
             db.CardItems.Where(c => c.Id == id).FirstOrDefault().Quantity++;
@@ -166,6 +186,7 @@ namespace WebApplication7.Controllers
             return Json(new { Success = true });
         }
         [HttpPost]
+        [Authorize]
         public ActionResult UpCardItem(int? id)
         {
             if (db.CardItems.Where(c => c.Id == id).FirstOrDefault().Quantity > 0)
@@ -176,6 +197,7 @@ namespace WebApplication7.Controllers
             return Json(new { Success = true });
         }
         [HttpPost]
+        [Authorize]
         public ActionResult BuyProducts()
         {
 
@@ -188,6 +210,7 @@ namespace WebApplication7.Controllers
         // POST: CardItems/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int? id)
         {
             CardItem cardItem = db.CardItems.Find(id);

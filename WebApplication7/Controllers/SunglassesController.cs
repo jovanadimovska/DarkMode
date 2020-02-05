@@ -40,6 +40,8 @@ namespace WebApplication7.Controllers
             return View(model);
         }
         // GET: Sunglasses1
+        [Authorize]
+        [Authorize(Roles = "ADMIN")]
         public ActionResult Index()
         {
             var sunglasses = db.Sunglasses.Include(s => s.Brand);
@@ -47,6 +49,8 @@ namespace WebApplication7.Controllers
         }
 
         // GET: Sunglasses1/Details/5
+        [Authorize]
+        [Authorize(Roles = "ADMIN")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -62,6 +66,8 @@ namespace WebApplication7.Controllers
         }
 
         // GET: Sunglasses1/Create
+        [Authorize]
+        [Authorize(Roles = "ADMIN")]
         public ActionResult Create()
         {
             ViewBag.BrandId = new SelectList(db.Brands, "Id", "Name");
@@ -73,6 +79,8 @@ namespace WebApplication7.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
+        [Authorize(Roles = "ADMIN")]
         public ActionResult Create([Bind(Include = "Id,Price,Name,imgUrl,BrandId,sale,category,rating")] Sunglasses sunglasses)
         {
             if (ModelState.IsValid)
@@ -87,6 +95,8 @@ namespace WebApplication7.Controllers
         }
 
         // GET: Sunglasses1/Edit/5
+        [Authorize]
+        [Authorize(Roles = "ADMIN")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -107,6 +117,8 @@ namespace WebApplication7.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
+        [Authorize(Roles = "ADMIN")]
         public ActionResult Edit([Bind(Include = "Id,Price,Name,imgUrl,BrandId,sale,category,rating")] Sunglasses sunglasses)
         {
             if (ModelState.IsValid)
@@ -120,6 +132,8 @@ namespace WebApplication7.Controllers
         }
 
         // GET: Sunglasses1/Delete/5
+        [Authorize]
+        [Authorize(Roles = "ADMIN")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -136,6 +150,8 @@ namespace WebApplication7.Controllers
 
         // POST: Sunglasses1/Delete/5
         [HttpPost, ActionName("Delete")]
+        [Authorize]
+        [Authorize(Roles = "ADMIN")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {

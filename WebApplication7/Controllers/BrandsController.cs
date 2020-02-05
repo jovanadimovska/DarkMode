@@ -23,6 +23,7 @@ namespace WebApplication7.Controllers
             return View(model);
         }
         // GET: Brands
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.Brands.ToList());
@@ -34,6 +35,8 @@ namespace WebApplication7.Controllers
             return View(model);
         }
         // GET: Brands/Details/5
+        [Authorize]
+
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -49,6 +52,9 @@ namespace WebApplication7.Controllers
         }
 
         // GET: Brands/Create
+        [Authorize]
+
+        [Authorize(Roles = "ADMIN")]
         public ActionResult Create()
         {
             return View();
@@ -59,6 +65,10 @@ namespace WebApplication7.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
+
+        [Authorize(Roles = "ADMIN")]
+
         public ActionResult Create([Bind(Include = "Id,Name")] Brand brand)
         {
             if (ModelState.IsValid)
@@ -72,6 +82,11 @@ namespace WebApplication7.Controllers
         }
 
         // GET: Brands/Edit/5
+        [Authorize]
+
+        [Authorize(Roles = "ADMIN")]
+
+
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -91,6 +106,10 @@ namespace WebApplication7.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
+
+        [Authorize(Roles = "ADMIN")]
+
         public ActionResult Edit([Bind(Include = "Id,Name")] Brand brand)
         {
             if (ModelState.IsValid)
@@ -103,6 +122,10 @@ namespace WebApplication7.Controllers
         }
 
         // GET: Brands/Delete/5
+        [Authorize]
+
+        [Authorize(Roles = "ADMIN")]
+
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -119,6 +142,10 @@ namespace WebApplication7.Controllers
 
         // POST: Brands/Delete/5
         [HttpPost, ActionName("Delete")]
+        [Authorize]
+
+        [Authorize(Roles = "ADMIN")]
+
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
