@@ -31,8 +31,9 @@ namespace WebApplication7.Controllers
             }
             return View(model);
         }
-        [Authorize]
         [HttpPost]
+        [Authorize]
+
         public ActionResult ShoppingCard(string SunglassesId)
         {
             int ID = Int32.Parse(SunglassesId);

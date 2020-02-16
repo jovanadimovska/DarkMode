@@ -55,6 +55,11 @@
                 </span>
             </div>
             <div class="col align-self-center">
+                <button class="btn btn-outline-light" onclick="AddToShoppingCard(@item.Sunglasses.Id)">
+                    Add to card
+                </button>
+            </div>
+            <div class="col align-self-center">
                 <button class="btn btn-outline-danger" onclick="Delete(@item.Id)">
                     Delete
                 </button>
@@ -80,7 +85,23 @@
                     alert("error");
                 }
             });
-        }   
+        }
+        function AddToShoppingCard(id) {
+            var obj = { SunglassesId: id };
+            $.ajax({
+                type: 'POST',
+                url: '/CardItems/ShoppingCard',
+                data: JSON.stringify(obj),
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    alert("Item added to cart");
+                },
+                error: function () {
+                    alert("error");
+                }
+            });
+        }
+        
     </script>
 </body>
 </html>

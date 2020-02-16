@@ -10,7 +10,7 @@ namespace WebApplication7.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("HomePage","Sunglasses");
         }
 
         public ActionResult About()

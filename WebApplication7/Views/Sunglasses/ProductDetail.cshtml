@@ -29,13 +29,24 @@
                         <span>Rating: @Model.sunglasses.rating/5</span>
                     </div>
                     <br />
-                    <div class="row">
-                        <button class="btn btn-outline-dark" id="addToCard" onclick="AddToShoppingCard()"> <i class="fa fa-shopping-cart pr-2 btn btn-secondary" aria-hidden="true"></i></button>
-                    </div>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                <div class="row">
+                    <button disabled id="addToCard" class="btn btn-outline-dark disabled" onclick="AddToShoppingCard()">Add to card</button>
+                </div>
+                        <br />
+                        <div class="row">
+                            <button id="addToWishList" class="btn btn-outline-dark" onclick="AddToWishList()">Add to wishlist</button>
+                        </div>
+                    }
+                    else { 
+                <div class="row">
+                    <button disabled id="addToCard" class="btn btn-outline-dark disabled" onclick="AddToShoppingCard()">Add to card</button>
+                </div>
                     <br />
                     <div class="row">
-                        <button id="addToWishList" class="btn btn-outline-dark" onclick="AddToWishList()">Add to wishlist</button>
-                    </div>
+                        <button disabled id="addToWishList" class="btn btn-outline-dark disabled" onclick="AddToWishList()">Add to wishlist</button>
+                    </div>}
                 </div>
             </div>
             <hr />
