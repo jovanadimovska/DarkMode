@@ -179,7 +179,7 @@ namespace WebApplication7.Controllers
         }
         [HttpPost]
         [Authorize]
-        public ActionResult DownCardItem(int? id)
+        public ActionResult UpCardItem(int? id)
         {
             db.CardItems.Where(c => c.Id == id).FirstOrDefault().Quantity++;
             db.SaveChanges();
@@ -187,9 +187,9 @@ namespace WebApplication7.Controllers
         }
         [HttpPost]
         [Authorize]
-        public ActionResult UpCardItem(int? id)
+        public ActionResult DownCardItem(int? id)
         {
-            if (db.CardItems.Where(c => c.Id == id).FirstOrDefault().Quantity > 0)
+            if (db.CardItems.Where(c => c.Id == id).FirstOrDefault().Quantity > 1)
             {
                 db.CardItems.Where(c => c.Id == id).FirstOrDefault().Quantity--;
                 db.SaveChanges();

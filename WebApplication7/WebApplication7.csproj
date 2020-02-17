@@ -996,6 +996,7 @@
     <Content Include="Views\WishListItems\Edit.cshtml" />
     <Content Include="Views\WishListItems\Index.cshtml" />
     <Content Include="Views\WishListItems\WishList.cshtml" />
+    <Content Include="Views\Shared\_navbar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

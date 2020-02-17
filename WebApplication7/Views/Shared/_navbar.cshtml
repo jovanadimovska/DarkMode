@@ -1,0 +1,75 @@
+﻿@model WebApplication7.Models.BrandsListViewModel
+@{
+}
+
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                <a class="navbar-brand active d-inline-block w-100px" href=@Url.Action("HomePage","Sunglasses")>DarkMode</a>
+                <div class="navbar-collapse w-100 order-3 dual-collapse2">
+                    <ul class="navbar-nav mr-auto mt-2">
+                        <li class="nav-item mr-1 ml-1">
+                            <p class="navbar-btn">
+                                <a class="btn btn-secondary" href=@Url.Action("Category", "Sunglasses", new { category = "women" })>Women</a>
+                            </p>
+                        </li>
+                        <li class="nav-item mr-1 ml-1">
+                            <a class="btn btn-secondary" href=@Url.Action("Category", "Sunglasses", new { category = "men" })>Men</a>
+                        </li>
+                        <li class="nav-item mr-1 ml-1">
+                            <p class="navbar-btn ">
+                                <a class="btn btn-secondary" href=@Url.Action("Category", "Sunglasses", new { category = "kids" })>Kids</a>
+                            </p>
+                        </li>
+                        <li class="nav-item mr-1 ml-1 dropdown">
+                            <p class="navbar-btn dropdown-toggle nav-link btn btn-secondary pb-1 m-0 text-center" id="navbarDropdown" role="button" data-toggle="dropdown">
+                                <a class="text-white p-0">Brands</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                    @foreach (var item in Model.brands)
+                                    {
+                                        <a class="dropdown-item" href=@Url.Action("SunglassesByBrand", "Brands", new { brand = item.Name})>@item.Name</a>
+                                    }
+                                </div>
+                            </p>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item mr-1 ml-1">
+                                <a class="btn btn-secondary" href=@Url.Action("ShoppingCard", "CardItems")>
+                                    <i class="fa fa-shopping-cart pr-2" aria-hidden="true"></i>Shopping Cart
+                                </a>
+                            </li>
+                            <li class="nav-item mr-1 ml-1">
+                                <a class="btn btn-secondary" href=@Url.Action("WishList", "WishListItems")>
+                                    <i class="fa fa-heart pr-2"></i>Wishlist
+                                </a>
+                            </li>
+                        }
+
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item mr-1 ml-1">
+                                <a class="btn btn-secondary" href=@Url.Action("Login", "Account")>
+                                    <i class="fa fa-sign-in pr-2"></i>Login
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item mr-1 ml-1">
+                                <p class="btn btn-secondary" href=#> @User.Identity.Name</p>
+                            </li>
+                            <li class="nav-item mr-1 ml-1">
+                                <a href=@Url.Action("Logout", "Account") class="btn btn-secondary"><i class="fa fa-sign-out white text-center pt-1"></i></a>
+                            </li>
+
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>

@@ -26,46 +26,86 @@
                     <span><i>Items:@Model.list.Count</i></span>
                 </div>
             </div>
-            <div class="row d-flex justify-content-around">
-                <div class="col">
-                    <span style="width:200px"></span>
+            <div class="row d-flex ">
+                <div class="col-2"></div>
+                <div class="col-3">
+                    <span>Item</span>
                 </div>
-                <div class="col">
-                    <span  style="    padding-left: 15px;">Name</span>
-                </div>
-                <div class="col">
+                <div class="col-3">
                     <span>Price</span>
                 </div>
-                <div class="col">
-                    <span style="width:200px"></span>
+                <div class="col-4">
+                    <span></span>
                 </div>
             </div>
             @foreach (var item in Model.list)
             {
-        <div class="row d-flex justify-content-around m-3 bg-dark">
-            <div class="col mt-2 mb-2">
-                <img src=@item.Sunglasses.imgUrl width="200px" height="120px" />
-            </div>
-            <div class="col align-self-center">
-                <span class="text-light">@item.Sunglasses.Name</span>
-            </div>
-            <div class="col align-self-center">
-                <span class="text-light">
-                    @item.Sunglasses.Price
-                </span>
-            </div>
-            <div class="col align-self-center">
-                <button class="btn btn-outline-danger" onclick="Delete(@item.Id)">
-                    Delete
-                </button>
-            </div>
+                <div class="row d-flex justify-content-around m-3 bg-dark">
+                    <div class="col mt-2 mb-2">
+                        <img src=@item.Sunglasses.imgUrl width="200px" height="120px" />
+                    </div>
+                    <div class="col align-self-center">
+                        <span class="text-light">@item.Sunglasses.Name</span>
+                    </div>
+                    <div class="col align-self-center">
+                        <span class="text-light">
+                            @item.Sunglasses.Price$
+                        </span>
+                    </div>
+                    <div class="col align-self-center">
+                        <button class="btn btn-outline-light" onclick="AddToShoppingCard(@item.Sunglasses.Id)">
+                            Add to cart
+                        </button>
+                    </div>
+                    <div class="col align-self-center">
+                        <button class="btn btn-outline-danger" onclick="Delete(@item.Id)">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+
+            }
         </div>
-            }          
+       @*
            
-        </div>
+       @if (Model.list.Count != 0)
+        {
+        <button class="btn btn-outline-success" onclick="AddItemsToCart()">
+            Add all to cart
+        </button>
+
+        <br />
+        <br />
+
+        <button class="btn btn-outline-danger" onclick="EmptyWishlist()">
+            Empty wishlist
+        </button>
+        }
+           *@ 
     </div>
     <div id="dialog1" title="Buy products?" hidden="hidden"></div>
     <script>
+        function AddItemsToCart() {
+            $.ajax({
+                type: 'POST',
+                url: '/WishListItems/AddItemsToCart',  
+                contentType: 'application/json; charset=utf-8',
+                 success: function (data) {
+                    window.location.reload();
+                },
+                error: function () {
+                    
+            })
+        };
+        function EmptyWishlist() {
+            $.ajax({
+                type: 'POST',
+                url: '/WishListItems/EmptyWishlist',  
+                contentType: 'application/json; charset=utf-8',
+                 success: function (data) {
+                    window.location.reload();
+            })
+        };
         function Delete(id) {
             var obj = { id: id };
             $.ajax({
@@ -81,6 +121,20 @@
                 }
             });
         }   
+        function AddToShoppingCard(id) {
+            var obj = { SunglassesId: id };
+            $.ajax({
+                type: 'POST',
+                url: '/CardItems/ShoppingCard',
+                data: JSON.stringify(obj),
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                },
+                error: function () {
+                    alert("error");
+                }
+            });
+        }
     </script>
 </body>
 </html>

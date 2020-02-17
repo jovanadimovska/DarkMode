@@ -53,9 +53,7 @@ namespace WebApplication7.Controllers
                 _userManager = value;
             }
         }
-        [Authorize]
-
-        [Authorize(Roles = "ADMIN")]
+        [Authorize(Roles ="ADMIN")]
         public ActionResult AddUserToRole()
         {
             AddToRoleModel model = new AddToRoleModel();
@@ -65,16 +63,22 @@ namespace WebApplication7.Controllers
             model.roles.Add("USER");
             return View(model);
         }
-        [Authorize]
-
-        [Authorize(Roles = "ADMIN")]
+       
         [HttpPost]
-
+        [Authorize(Roles = "ADMIN")]
         public ActionResult AddUserToRole(AddToRoleModel model)
         {
-            var user = UserManager.FindByEmail(model.Email);
-            UserManager.AddToRole(user.Id, model.Role);
-            return RedirectToAction("Index", "Sunglasses");
+            try
+            {
+                var user = UserManager.FindByEmail(model.Email);
+                UserManager.AddToRole(user.Id, model.Role);
+                return RedirectToAction("Index", "Sunglasses");
+            }
+            catch
+            {
+                return HttpNotFound();
+            }
+           
         }
        
        

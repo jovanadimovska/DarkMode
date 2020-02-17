@@ -14,26 +14,31 @@
  
     <div class="">
         <div class="container">
-
-            <div class="row">
-                <div class="col-3 text-white">
-                    <a class="fa fa-arrow-left" href=#>Return</a>
-                </div>
-                <div class="col">
-                    <h1 class="text-white text-bolder text-uppercase">@Model.brand</h1>
-                </div>
-            </div>
             <div class="row">
                 <div class="col">
+                    <br />
+                    <br />
+                    <h2 class="text-center text-white">@Model.brand</h2>
+                    <br />
+                    <br />
                     <div class="row">
-                        @foreach (var item in Model.listSunglasses)
+
+                        @if (Model.listSunglasses.Count != 0)
                         {
-                            <div class="col-6 mt-2 mb-2">
-                                <a href=@Url.Action("ProductDetail", "Sunglasses", new { id = item.Id })>
-                                    <img class="img-thumbnail" src=@item.imgUrl>
-                                </a>
-                            </div>
+                            foreach (var item in Model.listSunglasses)
+                            {
+                                <div class="col-6 mt-2 mb-2">
+                                    <a href=@Url.Action("ProductDetail", "Sunglasses", new { id = item.Id })>
+                                        <img class="img-thumbnail" src=@item.imgUrl>
+                                    </a>
+                                </div>
+                            }
                         }
+                        else
+                        {
+                            <div class="h3 text-monospace text-bold">Unfortunately, there are no available sunglasses from this brand at the moment. </div>
+                        }
+
                     </div>
                 </div>
             </div>

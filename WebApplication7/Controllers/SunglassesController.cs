@@ -17,15 +17,16 @@ namespace WebApplication7.Controllers
         {
             //da se zeme real id
             ProductDetail model = new ProductDetail();
-            model.listSimilar = db.Sunglasses.ToList();
             int id = int.Parse(this.RouteData.Values["id"].ToString());
-            model.sunglasses = db.Sunglasses.Find(id);
+            Sunglasses sg = db.Sunglasses.Find(id);
+            model.sunglasses = sg;
+            model.listSimilar = db.Sunglasses.Where(s => s.Id != sg.Id && s.category==sg.category).Take(5).ToList();
             return View(model);
         }
         public ActionResult HomePage()
         {
             HomePageViewModel model = new HomePageViewModel();
-            model.sunglasses = db.Sunglasses.ToList();
+            model.sunglasses = db.Sunglasses.Where(s=> s.sale==true).ToList();
             model.sunglassesForSlider.Add(model.sunglasses[0]);
             model.sunglassesForSlider.Add(model.sunglasses[1]);
             model.sunglassesForSlider.Add(model.sunglasses[2]);

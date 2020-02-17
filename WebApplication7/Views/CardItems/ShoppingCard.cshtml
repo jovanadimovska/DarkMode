@@ -33,14 +33,20 @@
                     </h5>
                 </div>
                 <div class="col d-flex justify-content-end">
-                    <span><i>Items:@Model.list.Count</i></span>
+                    <span><i>Number of items in cart:@Model.list.Count</i></span>
                 </div>
             </div>
+            @if (Model.list.Count == 0)
+            {
+                <p>Your cart is empty, check our products out!</p>
+            }
+            else
+            {
             <div class="row d-flex justify-content-around">
                 <div class="col">
                     <span style="width:200px"></span>
                 </div>
-                <div class="col"> 
+                <div class="col">
                     <span style="    padding-left: 38px;">Name</span>
                 </div>
                 <div class="col  ">
@@ -55,45 +61,46 @@
                     <span style="width:200px"></span>
                 </div>
             </div>
-            @foreach (var item in Model.list)
+
+            foreach (var item in Model.list)
             {
-        <div class="row d-flex justify-content-around m-3 bg-dark">
-            <div class="col  mt-2 mb-2">
-                <img src=@item.Sunglasses.imgUrl width="200px" height="120px" />
-            </div>
-            <div class="col align-self-center">
-                <span class="text-light">@item.Sunglasses.Name</span>
-            </div>
-            <div class="col align-self-center">
-                <div class="row  text-center">
-                    <span class="text-light col nopadding text-center" >@item.Quantity</span>
-                    <div class="col nopadding">
-                        <button class="btn btn-outline-light" onclick="Up(@item.Id)">
-                            <i class="fa fa-arrow-up"></i>
+                <div class="row d-flex justify-content-around m-3 bg-dark">
+                    <div class="col  mt-2 mb-2">
+                        <img src=@item.Sunglasses.imgUrl width="200px" height="120px" />
+                    </div>
+                    <div class="col align-self-center">
+                        <span class="text-light">@item.Sunglasses.Name</span>
+                    </div>
+                    <div class="col align-self-center">
+                        <div class="row  text-center">
+                            <span class="text-light col nopadding text-center">@item.Quantity</span>
+                            <div class="col nopadding">
+                                <button class="btn btn-outline-light" onclick="Up(@item.Id)">
+                                    <i class="fa fa-arrow-up"></i>
+                                </button>
+                            </div>
+                            <div class="col nopadding">
+                                <button class="btn btn-outline-light" onclick="Down(@item.Id)">
+                                    <i class="fa fa-arrow-down"></i>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <span style="width:20px"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col align-self-center">
+                        <span class="text-light">
+                            @item.Sunglasses.Price$
+                        </span>
+                    </div>
+                    <div class="col align-self-center">
+                        <button class="btn btn-outline-danger" onclick="Delete(@item.Id)">
+                            Delete
                         </button>
                     </div>
-                    <div class="col nopadding">
-                        <button class="btn btn-outline-light" onclick="Down(@item.Id)">
-                            <i class="fa fa-arrow-down"></i>
-                        </button>
-                    </div>
-                    <div class="col">
-                        <span style="width:20px"></span>
-                    </div>
+
                 </div>
-            </div>
-            <div class="col align-self-center">
-                <span class="text-light">
-                    @item.Sunglasses.Price$
-                </span>
-            </div>
-            <div class="col align-self-center">
-                <button class="btn btn-outline-danger" onclick="Delete(@item.Id)">
-                    Delete
-                </button>
-            </div>
-            
-        </div>
             }
             <div class="row d-flex m-2">
                 <div class="col">
@@ -105,12 +112,12 @@
                     </button>
                 </div>
             </div>
-            
+            }
         </div>
     </div>
     <div id="dialog1" title="Buy products?" hidden="hidden"></div>
     <script>
-               (function () {
+        (function () {
             $("#dialog1").dialog({
                 autoOpen: false
             });
@@ -130,7 +137,7 @@
                 }
             });
         }
-        function Up(id) {
+        function Down(id) {
             var obj = { id: id };
             $.ajax({
                 type: 'POST',
@@ -145,7 +152,7 @@
                 }
             });
         }
-        function Down(id) {
+        function Up(id) {
             var obj = { id: id };
             $.ajax({
                 type: 'POST',
@@ -190,6 +197,7 @@
                     },
                     'No': function () {
                         $(this).dialog('close');
+                        window.location.reload();
                     }
                 }
             });

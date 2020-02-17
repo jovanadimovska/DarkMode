@@ -16,33 +16,20 @@
         <div class="container">
             
             <div class="row">
-                <div class="col-3">
-                    <div class="row">
-                        <h4>Brands</h4>
-                    </div>
-                    @foreach (var item in Model.brands)
-                    {
-                <div class="row">
-                    
-                    <a class="nav-link text-white text-bold" href=@Url.Action("SunglassesByBrand", "Brands", new { brand = @item.Name })>
-                    <span>@item.Name</span>
-                    </a>
-                </div>
-                    }
-                </div>
-                <div class="col-9">
+                <div class="col-12">
                     @if (@Model.sunglasses.Count()==0) {
                         <div class="h3 text-monospace text-bold">Unfortunately, there are no available sunglasses in this category at the moment. </div>
                     }
-                    <div class="row">
-                        @foreach (var item in Model.sunglasses)
-                        {
-                            <div class="col-6 mt-2 mb-2">
-                                <a href=@Url.Action("ProductDetail", "Sunglasses", new { id = item.Id })>
-                                <img class="border" style="height: 170px" src=@item.imgUrl alt="Third slide">
-                                </a>
-</div>
-                        }
+
+                <div class="row mt-4">
+                    @foreach (var item in Model.sunglasses)
+                    {
+                        <div class="col-6 mt-2 mb-2 ">
+                            <a href=@Url.Action("ProductDetail", "Sunglasses", new { id = item.Id})><img class="img-thumbnail" style="height: 300px" src=@item.imgUrl alt="Third slide"></a>
+                            <h5 class="text-center text-white text-monospace"> Serial number: @item.Id </h5>
+                        </div>
+                    }
+                </div>
                     </div>
                 </div>
             </div>

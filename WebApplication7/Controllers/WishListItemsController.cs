@@ -21,6 +21,16 @@ namespace WebApplication7.Controllers
             db.SaveChanges();
             return Json(new { Success = true });
         }
+
+        public ActionResult EmptyWishlist()
+        {
+
+            foreach (var entity in db.WishListItems)
+                db.WishListItems.Remove(entity);
+            db.SaveChanges();
+
+            return RedirectToAction("WishList");
+        }
         [Authorize]
        
         public ActionResult WishList()
